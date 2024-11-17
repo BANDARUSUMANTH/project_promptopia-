@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -51,16 +51,20 @@ const UpdatePrompt = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Form
-        type="Edit"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={updatePrompt}
-      />
-    </Suspense>
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={updatePrompt}
+    />
   );
 };
 
-export default UpdatePrompt;
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <UpdatePrompt />
+    </Suspense>
+  );
+}
