@@ -7,11 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // Default font
+        satoshi: ['Satoshi', 'sans-serif'], // Add Satoshi font here
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-font-inter'), // Ensure you have this if using the Inter font plugin
+  ],
 };
